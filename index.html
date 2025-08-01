@@ -7,6 +7,7 @@
     <title>SDF Portfolio</title>
   </head>
   <body>
+    <!-- === Header/Profile Section === -->
     <header class="profile">
       <section class="profile-pic">
         <img src="./images/chris.jpg" alt="Profile picture" />
@@ -24,34 +25,38 @@
       </section>
     </header>
     <!-- === End of Header === -->
+
     <main>
+      <!-- === Proficiency Section === -->
       <section class="proficiency">
         <h2>Proficiency</h2>
 
         <ul class="proficiency-levels">
-          <li>Beginner |</li>
-          <li>Intermediate |</li>
+          <li>Beginner</li>
+          <li>Intermediate</li>
           <li>Advanced</li>
         </ul>
 
         <ul class="proficiency-list">
           <li>HTML+CSS</li>
-          <progress max="100" value="60"></progress>
+          <progress max="100" value="40">40%</progress>
 
           <li>JavaScript</li>
-          <progress max="100" value="15"></progress>
+          <progress max="100" value="10">10%</progress>
 
           <li>React</li>
-          <progress max="100" value="5"></progress>
+          <progress max="100" value="5">5%</progress>
 
           <li>Maya</li>
-          <progress max="100" value="85"></progress>
+          <progress max="100" value="85">85%</progress>
 
           <li>Nuke</li>
-          <progress max="100" value="70"></progress>
+          <progress max="100" value="50">50%</progress>
         </ul>
       </section>
+      <!-- === End of Proficiency === -->
 
+      <!-- === Skills Section === -->
       <section class="skills">
         <h2>Skills</h2>
 
@@ -66,7 +71,9 @@
           <li>Creative Thinking</li>
         </ul>
       </section>
+      <!-- === End of Skills === -->
 
+      <!-- === Projects Section === -->
       <section class="projects">
         <h2>Projects</h2>
 
@@ -78,7 +85,7 @@
             <h3>SDF05: Responsive Tailwind Footer</h3>
 
             <p>
-              <b>Brief:</b> Developed a responsive footer using TailwindCSS
+              <b>Brief:</b> Developed a web page footer using TailwindCSS
               utility classes.
             </p>
             <p><b>Technologies:</b> HTML, Tailwind</p>
@@ -123,14 +130,14 @@
           </div>
 
           <div class="project-card project-04">
-            <h3><time>2025</time></h3>
+            <h3><time>2023</time></h3>
             <p class="projects-vector">&#10084;</p>
 
             <h3>Kizazi Moto: Generation Fire</h3>
 
             <p>
-              <b>Brief:</b> Did lighting work on two episodes of the Disney Plus
-              animated series.
+              <b>Brief:</b> Worked on two episodes of the Disney Plus animated
+              series.
             </p>
             <p><b>Technologies:</b> Houdini, Arnold, Nuke</p>
             <p>
@@ -140,14 +147,16 @@
           </div>
         </div>
       </section>
+      <!-- === End of Projects === -->
 
+      <!-- === Education Section === -->
       <section class="education">
         <h2>Education</h2>
 
         <div class="education-cards-container">
           <div class="education-card education-01">
-            <p class="most-recent">most recent</p>
-            <div>
+            <p class="education-most-recent">most recent</p>
+            <div class="education-titles">
               <p><time>Jun. 2025</time> - <time>Dec. 2025</time></p>
 
               <h3>CodeSpace Academy</h3>
@@ -171,7 +180,7 @@
           </div>
 
           <div class="education-card education-02">
-            <div>
+            <div class="education-titles">
               <p><time>Feb. 2016</time> - <time>Dec. 2018</time></p>
 
               <h3>The Animation School</h3>
@@ -195,13 +204,13 @@
           </div>
 
           <div class="education-card education-03">
-            <div>
+            <div class="education-titles">
               <p><time>Jan. 2010</time> - <time>Dec. 2015</time></p>
 
               <h3>Cannons Creek High School</h3>
               <p>Matric | NQF Level 4</p>
             </div>
-            
+
             <ul>
               <li>
                 Built a strong academic foundation and found my passion for
@@ -215,130 +224,138 @@
           </div>
         </div>
       </section>
+      <!-- === End of Education === -->
 
+      <!-- === Tools Section === -->
       <section class="tools">
         <h2>Tools</h2>
 
-        <div class="tools-design">
-          <img src="https://skillicons.dev/icons?i=ps" alt="Photoshop" />
-          <img src="https://skillicons.dev/icons?i=ae" alt="After Effects" />
-          <img src="https://skillicons.dev/icons?i=pr" alt="Premier" />
-          <img src="https://skillicons.dev/icons?i=figma" alt="Figma" />
-        </div>
+        <div class="tools-card-container">
+          <div class="tools-card tools-languages">
+            <p class="tools-tag">languages</p>
+            <img src="https://skillicons.dev/icons?i=html" alt="HTML" />
+            <img src="https://skillicons.dev/icons?i=css" alt="CSS" />
+            <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
+            <img src="https://skillicons.dev/icons?i=react" alt="React" />
+            <img
+              src="https://skillicons.dev/icons?i=tailwind"
+              alt="TailwindCSS"
+            />
+            <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" />
+          </div>
 
-        <div class="tools-software">
-          <img src="https://skillicons.dev/icons?i=npm" alt="NPM" />
-          <img src="https://skillicons.dev/icons?i=git" alt="Git" />
-          <img src="https://skillicons.dev/icons?i=github" alt="Github" />
-          <img src="https://skillicons.dev/icons?i=vscode" alt="Vscode" />
-          <img
-            src="https://img.shields.io/badge/-37A5CC?style=flat-circle&logo=autodeskmaya&logoColor=white"
-            alt="Autodesk Maya"
-          />
-          <img
-            src="https://img.shields.io/badge/-333333?style=flat-circle&logo=nuke&logoColor=white"
-            alt="Nuke"
-          />
-          <!-- w-59px -->
-        </div>
+          <div class="tools-card tools-design">
+            <p class="tools-tag">design</p>
+            <img src="https://skillicons.dev/icons?i=ps" alt="Photoshop" />
+            <img src="https://skillicons.dev/icons?i=ae" alt="After Effects" />
+            <img src="https://skillicons.dev/icons?i=pr" alt="Premier" />
+            <img src="https://skillicons.dev/icons?i=figma" alt="Figma" />
+          </div>
 
-        <div class="tools-languages">
-          <img src="https://skillicons.dev/icons?i=html" alt="HTML" />
-          <img src="https://skillicons.dev/icons?i=css" alt="CSS" />
-          <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
-          <img src="https://skillicons.dev/icons?i=react" alt="React" />
-          <img
-            src="https://skillicons.dev/icons?i=tailwind"
-            alt="TailwindCSS"
-          />
-          <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" />
+          <div class="tools-card tools-software">
+            <p class="tools-tag">software</p>
+            <img src="https://skillicons.dev/icons?i=npm" alt="NPM" />
+            <img src="https://skillicons.dev/icons?i=git" alt="Git" />
+            <img src="https://skillicons.dev/icons?i=github" alt="Github" />
+            <img src="https://skillicons.dev/icons?i=vscode" alt="Vscode" />
+          </div>
         </div>
       </section>
+      <!-- === End of Tools === -->
 
+      <!-- === Experience Section === -->
       <section class="experience">
         <h2>Experience</h2>
 
-        <div class="experience-01">
-          <p><time>Feb. 2023</time> - <time>Feb. 2024</time></p>
-          <p>most recent</p>
+        <div class="experience-card-container">
+          <div class="experience-card experience-01">
+            <div class="experience-title">
+              <p><time>Feb. 2023</time> - <time>Feb. 2024</time></p>
 
-          <h3>3D Lighting & Compositing Artist</h3>
-          <p>Blue-Zoo Animation Studios | Full-time</p>
+              <h3>3D Lighting & Compositing Artist</h3>
+              <p>Blue-Zoo Animation Studios | Full-time</p>
+            </div>
 
-          <ul>
-            <li>
-              Did lighting for the Nickelodeon animated series <i>Hex Vet</i>
-            </li>
-            <li>
-              Worked as part of a team to craft every shot to be of the highest
-              quality
-            </li>
-            <li>
-              Practised essential time management skills working remotely for a
-              foreign company
-            </li>
-          </ul>
-        </div>
+            <ul>
+              <li>
+                Did lighting for the Nickelodeon animated series <i>Hex Vet</i>
+              </li>
+              <li>
+                Worked as part of a team to craft every shot to be of the
+                highest quality
+              </li>
+              <li>
+                Practised essential time management skills working remotely for
+                a foreign company
+              </li>
+            </ul>
+            <p class="experience-most-recent">most recent</p>
+          </div>
 
-        <div class="experience-02">
-          <p><time>Mar. 2022</time> - <time>Jan. 2023</time></p>
+          <div class="experience-card experience-02">
+            <div class="experience-title">
+              <p><time>Mar. 2022</time> - <time>Jan. 2023</time></p>
 
-          <h3>3D Lighting Artist</h3>
-          <p>Triggerfish Animation Studios | Full-time</p>
+              <h3>3D Lighting Artist</h3>
+              <p>Triggerfish Animation Studios | Full-time</p>
+            </div>
 
-          <ul>
-            <li>
-              Did lighting work for two episodes of the Disney Plus animated
-              series <i>Kizazi Moto: Generation Fire</i>
-            </li>
-            <li>
-              Worked with new technologies in order to keep up with the industry
-              standard
-            </li>
-            <li>
-              Was part of a small team working to create all shots to match the
-              directors vision
-            </li>
-          </ul>
-        </div>
+            <ul>
+              <li>
+                Did lighting work for two episodes of the Disney Plus animated
+                series <i>Kizazi Moto: Generation Fire</i>
+              </li>
+              <li>
+                Worked with new technologies in order to keep up with the
+                industry standard
+              </li>
+              <li>
+                Was part of a small team working to create all shots to match
+                the directors vision
+              </li>
+            </ul>
+          </div>
 
-        <div class="experience-03">
-          <p><time>Jul. 2021</time> - <time>Jan. 2022</time></p>
+          <div class="experience-card experience-03">
+            <div class="experience-title">
+              <p><time>Jul. 2021</time> - <time>Jan. 2022</time></p>
 
-          <h3>3D Lighting & Compositing Artist</h3>
-          <p>Blue-Zoo Animation Studios | Full-time</p>
+              <h3>3D Lighting & Compositing Artist</h3>
+              <p>Blue-Zoo Animation Studios | Full-time</p>
+            </div>
 
-          <ul>
-            <li>
-              Worked on S2 of <i>The Adventures of Paddington</i> animated
-              series
-            </li>
-            <li>Worked on the <i>Big Tree City</i> animated series</li>
-            <li>
-              Delivered high quality work, meeting deadlines and following
-              director notes
-            </li>
-          </ul>
+            <ul>
+              <li>
+                Worked on S2 of <i>The Adventures of Paddington</i> animated
+                series
+              </li>
+              <li>Worked on the <i>Big Tree City</i> animated series</li>
+              <li>
+                Delivered high quality work, meeting deadlines and following
+                director notes
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
+      <!-- === End of Experience === -->
     </main>
     <!-- === End of Main === -->
 
-    <footer>
+    <!-- === Footer/Contact Section === -->
+    <footer class="contact">
       <section class="lets-chat">
-        <p>Lets chat! I'm ready to work on exciting new projects.</p>
-        <p>lordc42@gmail.com</p>
+        <h2>Lets chat! I'm ready to work on exciting new projects.</h2>
       </section>
       <nav>
-        <a href="mailto:lordc42@gmail.com" target="_blank"
-          ><img src="https://skillicons.dev/icons?i=gmail" alt="Gmail"
-        /></a>
+        <img src="https://skillicons.dev/icons?i=gmail" alt="Gmail" />
+        <a href="mailto:lordc42@gmail.com" target="_blank">lordc42@gmail.com</a>
+        <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
         <a href="https://www.linkedin.com/in/-christopher-lord/" target="_blank"
-          ><img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn"
-        /></a>
-        <a href="https://github.com/Christopher-Lord" target="_blank"
-          ><img src="https://skillicons.dev/icons?i=github" alt="Github"
-        /></a>
+          >LinkedIn</a
+        >
+        <img src="https://skillicons.dev/icons?i=github" alt="Github" />
+        <a href="https://github.com/Christopher-Lord" target="_blank">Github</a>
       </nav>
     </footer>
   </body>
