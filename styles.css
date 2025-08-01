@@ -3,6 +3,7 @@
 
 /* <======= Base Styles =======> */
 :root {
+  /* Setting root to flex in order to center everything on bigger screens */
   display: flex;
   justify-content: center;
 }
@@ -15,27 +16,34 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 
+  /* Adding the background image, sticking it to the top so it doesn't move when you scroll and sizing it up to fit the page */
   background: url("./images/background.png") repeat-y fixed top;
   background-size: 275rem;
 
   padding: 3.9375rem 3.75rem;
 
+  /* Setting a max width on the body so it doesn't stretch to fit larger screens */
   max-width: 90rem;
   min-width: 0;
 }
 
 /* <======= Main Styling =======> */
 main {
+  /* Main grid for all the content sections to fit neatly together */
   display: grid;
   grid-template: auto / repeat(7, 1fr);
   gap: 1.5rem;
 
+  /* Resetting the default margin and adding my own */
   margin: 0;
   margin-top: 3rem;
 }
 
 h1 {
+  /* Clamping the font size in order to have the text responsive as you shrink and grow the screen.
+    Setting the base value to vw instead of rem allows the text to shrink and grow dynamically  */
   font-size: clamp(0.875rem, 2.5vw, 2.25rem);
+          /* clamp(min value, base, max value) */
   font-weight: 600;
 
   line-height: 104%;
@@ -46,6 +54,7 @@ h1 {
 
 h2 {
   font-size: clamp(0.875rem, 2.361vw, 2.125rem);
+          /* clamp(min value, base, max value) */
   font-weight: 500;
 
   line-height: 150%;
@@ -56,6 +65,7 @@ h2 {
 
 h3 {
   font-size: clamp(0.75rem, 1.667vw, 1.5rem);
+          /* clamp(min value, base, max value) */
   font-weight: 500;
 
   line-height: 150%;
@@ -65,6 +75,7 @@ h3 {
 
 /* <======= Profile Section Styling =======> */
 .profile {
+  /* Grid for inside the profile section, setting 6 columns to make sure the size and spacing of elements are accurate */
   display: grid;
   grid-template: auto / repeat(6, 1fr);
   gap: 1.6rem;
@@ -72,15 +83,15 @@ h3 {
   max-height: 18.75rem;
 }
 
-.profile-pic {
+/* .profile-pic {
   min-height: 18.75rem;
-}
+} */
 
 .profile-pic img {
-  /* grid-column: 1 / span 1; */
-
+  /* Setting the image to resize to fill the given aspect ratio, clipping it to fit within */
   object-fit: cover;
 
+  /* Setting the min and max values for the image to fit within */
   min-width: 18.75rem;
   max-height: 18.75rem;
 
@@ -88,6 +99,7 @@ h3 {
 }
 
 .profile-info {
+  /* Setting the containers max height so it can't expand even if the content overflows */
   max-height: 18.75rem;
   padding: 3.6875rem 4.3125rem;
 
@@ -95,9 +107,10 @@ h3 {
 
   border-radius: 1.8125rem;
 
+  /* Setting the container to take up grid columns from the second line to the last line */
   grid-column: 2 / -1;
 
-  text-overflow: ellipsis;
+  /* If the contents of the container were to overflow, that overflow would be hidden */
   overflow: hidden;
 }
 
@@ -116,25 +129,27 @@ h3 {
 .proficiency {
   background: #fff;
 
+  /* Setting the container to take up 3/7 columns */
   grid-column: 1 / span 3;
 
   border-radius: 1.8125rem;
 
-  width: 100%;
-
-  padding: 2.5625rem 1.75rem;
+  /* Clamping the padding so it can shrink when the screen does, base value vw based on a 1440px screen width */
+  padding: clamp(0.75rem, 2.847vw, 2.5625rem) clamp(0.75rem, 1.944vw, 1.75rem);
 }
 
 .proficiency ul {
   font-size: clamp(0.625rem, 1.667vw, 1.5rem);
   font-weight: 500;
 
+  /* Removing default styling from the lists in this container */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .proficiency-levels {
+  /* Setting display to flex in order to get the list items next to each other, and moving them to the end of the container */
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
@@ -143,27 +158,31 @@ h3 {
 }
 
 .proficiency-levels li {
-  padding-bottom: 2rem;
-
   font-size: clamp(0.75rem, 1.528vw, 1.375rem);
+
+  padding-bottom: 2rem;
 }
 
 .proficiency-list {
-  line-height: 104%;
-
+  /* Grid for list items and their corresponding progress bars */
   display: grid;
   grid-template: auto / repeat(4, 1fr);
-
   gap: 1rem;
 
   margin: 0.75rem 0;
+  line-height: 104%;
 }
 
 progress {
-  grid-column: 2 / -1;
+  /* Setting the progress bars to go from the 2nd line to the last line */
+  grid-column: 2 / -1; 
 
+  /* Giving the bars a width of 100% to make sure they take all the space they can in the container */
   width: 100%;
 
+  /* Removing default progress bar styling and adding my own */
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 
   border: none;
@@ -172,11 +191,19 @@ progress {
   background: #fff;
 }
 
+/* Setting the background for the bar itself in chrome */
 progress::-webkit-progress-bar {
   background: #fff;
 }
 
+/* Setting the color of the filled in portion of the bar on chrome*/
 progress::-webkit-progress-value {
+  border-radius: 0.4537rem;
+  background: #4a8b70;
+}
+
+/* Setting the color of the filled in portion of the bar on firefox*/
+progress::-moz-progress-bar {
   border-radius: 0.4537rem;
   background: #4a8b70;
 }
@@ -186,14 +213,17 @@ progress::-webkit-progress-value {
   background: #fff;
   padding: 1.75rem;
 
+  /* Setting a min height so the container can't shrink */
   min-height: 26.8125rem;
 
   border-radius: 1.8125rem;
 
+  /* Setting the container to take up from the 4th line to the last line */
   grid-column: 4 / -1;
 }
 
 .skills-list {
+  /* Removing default list styling and adding my own */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -203,11 +233,13 @@ progress::-webkit-progress-value {
   line-height: 150%;
   letter-spacing: 0.125rem;
 
+  /* Setting display to flex to make all the elements fit next to each other and wrap to the next line */
   display: flex;
   flex-wrap: wrap;
   gap: 1.21rem;
 }
 
+/* Pill shaped background styling */
 .skills-list li {
   background: #4a8b7021;
 
@@ -221,12 +253,14 @@ progress::-webkit-progress-value {
   border-radius: 1.8125rem;
   padding: 2.6875rem 1.8125rem;
 
+  /* Container take up all columns */
   grid-column: 1/ -1;
 
   margin-top: 1.5rem;
 }
 
 .project-cards-container {
+  /* Flex container so the cards sit nicely nex to each other equally spaced apart */
   display: flex;
   justify-content: space-around;
   gap: 1.25rem;
@@ -239,35 +273,23 @@ progress::-webkit-progress-value {
   padding: 1.3125rem 1.1875rem;
   max-width: 18.125rem;
 
+  /* Setting position to relative for the vector heart */
   position: relative;
 }
 
 .project-card .projects-vector {
+  /* Setting position to absolute so it's removed from flow, and placing it in the top right corner of the project card */
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5625rem;
+
   color: #db8566;
   font-size: clamp(0.8125rem, 1.889vw, 1.7rem);
 
   margin: 0;
 
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5625rem;
-
+  /* Transition for the hover state */
   transition: 0.2s ease;
-}
-
-.project-01 {
-  background: #4a8b70;
-  color: #fff;
-}
-
-.project-01 .projects-vector {
-  color: #d76239;
-}
-
-.project-card > p {
-  font-size: clamp(0.5938rem, 1.344vw, 1.21rem);
-  font-weight: 400;
-  line-height: 150%;
 }
 
 .projects h2 {
@@ -278,30 +300,42 @@ progress::-webkit-progress-value {
   margin-bottom: 2rem;
 }
 
-.project-card > p > b {
-  font-weight: 700;
+.project-card > p {
+  font-size: clamp(0.5938rem, 1.344vw, 1.21rem);
+  font-weight: 400;
+  line-height: 150%;
 }
 
-.projects-vector:hover,
-.projects-vector:focus {
+/* Changing the first project card elements so it stands out */
+.project-01 {
+  background: #4a8b70;
+  color: #fff;
+}
+
+.project-01 .projects-vector {
+  color: #d76239;
+}
+
+/* Hover state so the vector heart changes colour and has a pointer when hovered over */
+.projects-vector:hover {
   color: #d76239;
   cursor: pointer;
 }
 
 /* <======= Education Section Styling =======> */
 .education {
+  /* Container takes up 5 columns */
   grid-column: 1 / span 5;
 
   background: #fff;
   border-radius: 1.8125rem;
   padding: 1.8125rem;
 
-  width: 100%;
-
   margin-top: 1.5rem;
 }
 
 .education-cards-container {
+  /* Flex container so card elements can stack nicely on top of one another */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -312,10 +346,13 @@ progress::-webkit-progress-value {
   border-radius: 1.8125rem;
   padding: 1.6875rem;
 
+  /* Setting position to relative for the most recent tag */
   position: relative;
 
+  /* Grid within each card to space elements out nicely */
   display: grid;
   grid-template: auto / repeat(3, 1fr);
+  /* Gap is clamped so it shrinks with the screen size */
   gap: clamp(0, 2.222vw, 2rem);
 }
 
@@ -325,6 +362,7 @@ progress::-webkit-progress-value {
   line-height: 150%;
 }
 
+/* Time element styling */
 .education-titles time {
   font-size: clamp(0.5rem, 1.344vw, 1.21rem);
   font-weight: 500;
@@ -349,9 +387,11 @@ progress::-webkit-progress-value {
   margin: 0;
   padding: 0;
 
+  /* List takes up space from line 2 until the last line */
   grid-column: 2 / -1;
 }
 
+/* Removing default margin from the titles */
 .education-titles > * {
   margin: 0;
 }
@@ -359,10 +399,12 @@ progress::-webkit-progress-value {
 .education-titles {
   padding: 0.25rem 0;
 
+  /* Clamping the width so it shrinks with the screen */
   width: clamp(8rem, 22.222vw, 20rem);
 }
 
 .education-most-recent {
+  /* Position set to absolute to remove it from flow and place it in the top right corner */
   position: absolute;
 
   top: 0.75rem;
@@ -377,6 +419,7 @@ progress::-webkit-progress-value {
   font-size: clamp(0.5rem, 0.972vw, 0.875rem);
 }
 
+/* Changing styling of the education card tagged with most recent */
 .education-01 {
   background: #4a8b70;
   color: #fff;
@@ -396,6 +439,7 @@ progress::-webkit-progress-value {
 
 /* <======= Tools Section Styling =======> */
 .tools {
+  /* Container takes up from line 6 to the last line */
   grid-column: 6 /-1;
 
   background: #fff;
@@ -410,6 +454,7 @@ progress::-webkit-progress-value {
 }
 
 .tools-card-container {
+  /* Flex container to stack elements on top of one another, center them and space them out nicely */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -423,16 +468,19 @@ progress::-webkit-progress-value {
   padding: 2.375rem 0.625rem;
   width: clamp(4.75rem, 12.778vw, 11.5rem);
 
+  /* Grid within each card to center and space the icons out nicely */
   display: grid;
   grid-template: auto / repeat(2, 2rem);
   justify-content: center;
   justify-items: center;
   gap: 1.8rem;
 
+  /* Position set to relative for the tool card tags */
   position: relative;
 }
 
 .tools-card img {
+  /* Clamping the size of the icons so they shrink with the screen size */
   width: clamp(0.8125rem, 2.847vw, 2.5625rem);
   height: clamp(0.8125rem, 2.847vw, 2.5625rem);
 }
@@ -440,6 +488,7 @@ progress::-webkit-progress-value {
 .tools-tag {
   font-size: clamp(0.3125rem, 1.111vw, 1rem);
 
+  /* Position set to absolute to place each tag at the top of their respective container */
   position: absolute;
   top: -0.875rem;
 
@@ -454,6 +503,7 @@ progress::-webkit-progress-value {
 
 /* <======= Experience Section Styling =======> */
 .experience {
+  /* Container takes up all columns */
   grid-column: 1 / -1;
 
   background: #fff;
@@ -461,10 +511,10 @@ progress::-webkit-progress-value {
   padding: 1.9375rem 1.6875rem;
 
   margin-top: 1.5rem;
-  min-height: 40rem;
 }
 
 .experience-card-container {
+  /* Flex container to stack the cards and space them out */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -475,16 +525,19 @@ progress::-webkit-progress-value {
   border-radius: 1.8125rem;
   padding: 1.1875rem 1.5625rem;
 
+  /* Grid inside each card to space things out nicely */
   display: grid;
   grid-template: auto / 2fr 3fr 1fr;
 }
 
+/* Setting the lists in cards 2 and 3 to take up more space, since they don't have the most recent tag */
 .experience-02 ul,
 .experience-03 ul {
   grid-column: span 2;
 }
 
 .experience-most-recent {
+  /* Styling the tag within the grid to sit in the top right */
   justify-self: center;
   align-self: start;
 
@@ -503,13 +556,13 @@ progress::-webkit-progress-value {
 }
 
 .experience-title h3 {
-  font-size: (0.625rem, 1.667vw, 1.5rem);
+  font-size: clamp(0.625rem, 1.667vw, 1.5rem);
   font-weight: 500;
   line-height: 150%;
 }
 
 .experience-title time {
-  font-size: (0.5rem, 1.344vw, 1.21rem);
+  font-size: clamp(0.5rem, 1.344vw, 1.21rem);
   font-weight: 500;
   line-height: 150%;
 
@@ -517,7 +570,7 @@ progress::-webkit-progress-value {
 }
 
 .experience-title p {
-  font-size: (0.5rem, 1.344vw, 1.21rem);
+  font-size: clamp(0.5rem, 1.344vw, 1.21rem);
   font-weight: 400;
   line-height: 150%;
 
@@ -534,6 +587,7 @@ progress::-webkit-progress-value {
   margin: 0;
 }
 
+/* Changing the styling for the card tagged most recent */
 .experience-01 {
   background: #4a8b70;
   color: #fff;
@@ -565,7 +619,9 @@ progress::-webkit-progress-value {
   margin: 0;
 }
 
+/* <--- Nav styling ---> */
 nav {
+  /* Flex container to space links out nicely */
   display: flex;
   align-items: center;
 
@@ -574,7 +630,9 @@ nav {
   margin-top: 1rem;
 }
 
+/* Link styling */
 nav a {
+  /* Removing default link styling and adding my own */
   text-decoration: none;
   color: #dddddd;
 
@@ -583,6 +641,7 @@ nav a {
   line-height: 150%;
 }
 
+/* Hover state to underline the links when hovered over */
 nav a:hover {
   text-decoration: underline;
 }
@@ -592,14 +651,12 @@ nav a:hover {
   body {
     padding: 1.125rem 2.6875rem;
 
+    /* Changing max width of container for smaller screens */
     max-width: 25.125rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   main {
+    /* Changing main grid sizing for smaller screens */
     grid-template: auto / repeat(auto-fit / minmax(319px, 1fr));
     gap: 1rem;
 
@@ -645,11 +702,13 @@ nav a:hover {
   }
 
   .profile-info p {
+    /* Font size clamped with base value set for 786px screens */
     font-size: clamp(0.375rem, 1.647vw, 0.4375rem);
   }
 
   /* <======= Proficiency Section Styling =======> */
   .proficiency {
+    /* Container now takes up all columns */
     grid-column: 1 / -1;
 
     max-height: 11.0625rem;
@@ -677,6 +736,7 @@ nav a:hover {
 
   /* <======= Skills Section Styling =======> */
   .skills {
+     /* Container now takes up all columns */
     grid-column: 1 / -1;
 
     min-height: 11.0625rem;
@@ -706,6 +766,7 @@ nav a:hover {
   }
 
   .project-cards-container {
+    /* Project cards now wrap to stack on top of one another */
     flex-wrap: wrap;
     gap: 0.625rem;
   }
@@ -729,6 +790,7 @@ nav a:hover {
   }
 
   .projects h2 {
+    /* Changing text alignment for smaller screens */
     text-align: left;
   }
 
@@ -738,12 +800,12 @@ nav a:hover {
 
   /* <======= Education Section Styling =======> */
   .education {
+     /* Container now takes up all columns */
     grid-column: 1/ -1;
 
     border-radius: 0.75rem;
     padding: 0.75rem;
 
-    /* min-width: 19.9375rem; */
     min-height: 28.875rem;
 
     margin-top: 0;
@@ -796,31 +858,29 @@ nav a:hover {
 
   /* <======= Tools Section Styling =======> */
   .tools {
+     /* Container now takes up all columns */
     grid-column: 1 / -1;
 
     border-radius: 0.75rem;
     padding: 0.75rem;
 
-    /* min-width: 319px; */
-
     margin-top: 0;
   }
 
   .tools-card-container {
+    /* Flex direction changed so cards now sit next to each other */
     flex-direction: row;
     justify-content: space-around;
     gap: 1rem;
-
-    flex-basis: 4.75rem;
   }
 
   .tools-card {
     border-radius: 0.375rem;
     padding: 1rem 0.25rem;
 
-    /* min-width: 4.75rem; */
     min-height: 6.5rem;
 
+    /* Adjusting the grid to fit better at a smaller scale */
     grid-template: auto / repeat(2, 1.5rem);
     align-items: center;
     gap: 0;
@@ -840,6 +900,7 @@ nav a:hover {
   }
 
   .tools-languages {
+    /* Changing the order of the languages card to be at the end */
     order: 1;
   }
 
@@ -849,7 +910,6 @@ nav a:hover {
     padding: 0.75rem;
 
     margin-top: 0;
-    min-height: 30.4375rem;
   }
 
   .experience-card-container {
@@ -860,12 +920,14 @@ nav a:hover {
     border-radius: 0.625rem;
     padding: 0.5rem;
 
+    /* Position set to relative for most recent tag */
     position: relative;
 
     grid-template: auto / repeat(3, 1fr);
   }
 
   .experience-most-recent {
+    /* Changing most recent tag to be absolute and placed in the top right on smaller screen sizes */
     position: absolute;
 
     right: 0.75rem;
@@ -930,6 +992,7 @@ nav a:hover {
   }
 }
 
+/* Adjusting the padding on smallest screen sizes so the containers don't get squashed */
 @media (max-width: 402px) {
   body {
     padding: 0.25rem;
